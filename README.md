@@ -37,64 +37,43 @@ This is a [Jekyll theme](https://jekyllrb.com/docs/themes/) for the
 
 ## Installation
 
-1. Install the theme as a Ruby Gem by adding it to your `Gemfile`
-   like so:
+1. Create a new Jekyll site and change directory:
+    ```
+    jekyll new myblog
+    cd myblog
+    ```
+
+2. Replace current theme-gem with the `uswds-jekyll` gem in your `Gemfile`:
+
+    ```diff
+    - gem "minima", "~> 2.0"
+    + gem 'uswds-jekyll'
+    ```
+3. Add the `jekyll_pages_api_search` plugin by adding it to your `Gemfile`
 
     ```ruby
-    gem 'uswds-jekyll'
-    ```
-1. Install the `jekyll_pages_api_search` by adding it to your `Gemfile`
-    ```
     group :jekyll_plugins do
       gem 'jekyll_pages_api_search'
     end
     ```
 
-1. Fetch and update your bundled gems by running:
+4. Fetch and install / update your bundled gems via Bundler by running:
 
     ```sh
     bundle
     ```
 
-1. Set the `theme` in your site's Jekyll configuration,
+5. Set the `theme` in your site's Jekyll configuration,
    `_config.yml`:
 
     ```yml
     theme: uswds-jekyll
     ```
 
-You will need to restart your Jekyll server to see the effects.
+Run `bundle exec jekyll serve` to preview your site locally at `http://localhost:4000/`
 
-### Install as a new Jekyll site
+**Note:** You will need to restart your Jekyll server for the changes to take effect.
 
-1. Create a new Jekyll site:
-    ```
-    jekyll new
-    ```
-1. Replace the default `gem "minima", "~> 2.0"` gem with the `uswds-jekyll` gem in your `Gemfile`:
-
-    ```ruby
-    gem 'uswds-jekyll', :git => 'https://github.com/18F/uswds-jekyll.git'
-    ```
-1. Set the `theme` in your site's Jekyll configuration,
-   `_config.yml`:
-
-    ```yml
-    theme: uswds-jekyll
-    ```
-1. Update the layouts used on the following pages to use [uswds-jekyll layouts](https://github.com/18F/uswds-jekyll/tree/master/_layouts)
-    ```
-    404.html
-    index.md
-    about.md
-    posts/2017-08-07-welcome-to-jekyll.markdown
-    ```
-1. Fetch and update your bundled gems by running:
-
-    ```sh
-    bundle
-    ```
-1. Run Jekyll `jekyll serve` to build your site locally at http://localhost:4000/
 
 ### Development
 
